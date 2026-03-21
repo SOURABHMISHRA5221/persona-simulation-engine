@@ -1,0 +1,28 @@
+site_name: Persona Simulation Engine
+site_description: Run democratic decision-making with AI agent populations before you ship anything.
+repo_url: https://github.com/SOURABHMISHRA5221/persona-simulation-engine
+repo_name: sourabhmishra/persona-simulation-engine
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - Overview: index.md
+  - Architecture & Graphiti: architecture.md
+  - Custom Actions: custom_actions.md
+  - Personas: personas.md
