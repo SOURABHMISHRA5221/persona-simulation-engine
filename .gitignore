@@ -37,5 +37,4 @@ ENV/
 results_*.json
 export_*.json
 
-# Ollama models cache (if stored locally)
-models/
+/models/
