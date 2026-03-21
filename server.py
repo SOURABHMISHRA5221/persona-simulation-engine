@@ -3,6 +3,7 @@ import json
 import os
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
+from fastapi.staticfiles import StaticFiles
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -45,3 +46,12 @@ async def simulate(
         yield f"data: {json.dumps({'done': True})}\n\n"
         
     return StreamingResponse(event_generator(), media_type="text/event-stream")
+
+# Mount React Frontend for Production Deployment
+frontend_dist = os.path.join(os.path.dirname(__file__), "frontend/dist")
+if os.path.isdir(frontend_dist):
+    app.mount("/", StaticFiles(directory=frontend_dist, html=True), name="frontend")
+else:
+    @app.get("/")
+    async def fallback():
+        return {"status": "Backend is running. In dev mode, run the frontend via Vite on port 5173."}

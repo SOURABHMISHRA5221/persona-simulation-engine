@@ -102,6 +102,28 @@ npm run dev
 ```
 Open `http://localhost:5173/#demo` in your browser.
 
+### 🚀 Free-Tier Deployment Options
+
+This project is built using a **Unified Multi-Stage Dockerfile**. The backend seamlessly bundles and serves the compiled React frontend, requiring only a single container to go live anywhere that supports Docker!
+
+Because the engine streams live data via Server-Sent Events (SSE), it needs a real container. Here are the best **100% Free** options:
+
+#### Option A: Google Cloud Run (Recommended First Choice)
+[Google Cloud Run](https://cloud.google.com/run) securely supports the SSE streaming we need, and its generous "Always Free" tier gives you 2 million free requests per month.
+1. Install the `gcloud` CLI or log into your Google Cloud Console.
+2. Under "Cloud Run", select "Deploy from source code" or simply run this command in your terminal:
+   `gcloud run deploy persona-sim --source . --port 8000 --allow-unauthenticated`
+3. Answer the prompt to set your region, and Google Cloud will natively rip through your Dockerfile, build the image, and hand you back a sleek `https://...` production URL for your simulation portal!
+
+#### Option B: Render.com (Easiest via GitHub)
+[Render](https://render.com) offers a completely free tier for Docker containers.
+1. Push your repository to GitHub.
+2. Sign up for Render and click **New+** -> **Web Service**.
+3. Connect your GitHub and select this repository.
+4. Render will automatically detect your `Dockerfile`. (Make sure it exposes port `8000`).
+5. Add your `OLLAMA_API_KEY` under the Environment Variables section.
+6. Click deploy! Render will give you a public `https://...` URL for free (Note: Free instances spin down after 15 mins of inactivity, so the first load might take a few seconds).
+
 ### Run via CLI
 
 ```bash
