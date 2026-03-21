@@ -1,0 +1,41 @@
+{
+  "action_set_id": "ecommerce",
+  "description": "E-commerce product reaction — how users respond to a new product or feature launch.",
+  "primary_action_label": "ACTION",
+  "actions": [
+    {
+      "id": "PURCHASE",
+      "label": "Purchase",
+      "emoji": "🛒",
+      "sentiment": "positive",
+      "description": "You would buy this product or pay for this feature right now."
+    },
+    {
+      "id": "WISHLIST",
+      "label": "Wishlist",
+      "emoji": "❤️",
+      "sentiment": "positive",
+      "description": "You like the idea but are not ready to buy yet — you'd save it for later."
+    },
+    {
+      "id": "IGNORE",
+      "label": "Ignore",
+      "emoji": "😶",
+      "sentiment": "neutral",
+      "description": "This product is not relevant to you — you would scroll past it."
+    },
+    {
+      "id": "REPORT",
+      "label": "Report",
+      "emoji": "🚩",
+      "sentiment": "negative",
+      "description": "You find this product problematic, misleading, or offensive."
+    }
+  ],
+  "approval_actions": ["PURCHASE", "WISHLIST"],
+  "verdict_thresholds": {
+    "strong_approval": 60,
+    "mixed": 40,
+    "majority_opposition": 20
+  }
+}

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "campaign_001",
+    "title": "Price Increase",
+    "description": "We are increasing our monthly subscription price by 20%, from $10/month to $12/month. The additional revenue will be invested in new features and faster servers."
+  },
+  {
+    "id": "campaign_002",
+    "title": "Removing Free Tier",
+    "description": "We are removing the free tier from our platform. All users will need to subscribe to a paid plan starting at $5/month. Existing free users will get a 30-day grace period."
+  },
+  {
+    "id": "campaign_003",
+    "title": "Dark Mode Launch",
+    "description": "We are launching a dark mode UI across the entire platform. This will be the default for all users, with an option to switch back to light mode in settings."
+  },
+  {
+    "id": "campaign_004",
+    "title": "AI-Powered Recommendations",
+    "description": "We are introducing AI-powered personalized recommendations. The AI will analyze your usage patterns to suggest relevant content and features. All data stays on our servers."
+  },
+  {
+    "id": "campaign_005",
+    "title": "Community Forum Launch",
+    "description": "We are launching a community forum where users can share tips, ask questions, and connect with each other. The forum will be moderated by our team and top community members."
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "action_set_id": "vote",
+  "description": "Standard approval voting — LIKE, DISLIKE, or ABSTAIN on a proposed change.",
+  "primary_action_label": "ACTION",
+  "actions": [
+    {
+      "id": "LIKE",
+      "label": "Like",
+      "emoji": "👍",
+      "sentiment": "positive",
+      "description": "You approve of this change and think it is a good idea."
+    },
+    {
+      "id": "DISLIKE",
+      "label": "Dislike",
+      "emoji": "👎",
+      "sentiment": "negative",
+      "description": "You disapprove of this change and think it is a bad idea."
+    },
+    {
+      "id": "ABSTAIN",
+      "label": "Abstain",
+      "emoji": "😐",
+      "sentiment": "neutral",
+      "description": "You have no strong opinion either way."
+    }
+  ],
+  "approval_actions": ["LIKE"],
+  "verdict_thresholds": {
+    "strong_approval": 70,
+    "mixed": 50,
+    "majority_opposition": 30
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "action_set_id": "social",
+  "description": "Social media content reaction — how users respond to a post or announcement.",
+  "primary_action_label": "ACTION",
+  "actions": [
+    {
+      "id": "SHARE",
+      "label": "Share",
+      "emoji": "🔁",
+      "sentiment": "positive",
+      "description": "You would share or repost this content with your network."
+    },
+    {
+      "id": "COMMENT",
+      "label": "Comment",
+      "emoji": "💬",
+      "sentiment": "positive",
+      "description": "You would engage with this content by leaving a comment."
+    },
+    {
+      "id": "SCROLL_PAST",
+      "label": "Scroll Past",
+      "emoji": "👋",
+      "sentiment": "neutral",
+      "description": "This content does not grab your attention — you would keep scrolling."
+    },
+    {
+      "id": "HIDE",
+      "label": "Hide",
+      "emoji": "🙈",
+      "sentiment": "negative",
+      "description": "You would hide this content from your feed or unfollow."
+    }
+  ],
+  "approval_actions": ["SHARE", "COMMENT"],
+  "verdict_thresholds": {
+    "strong_approval": 65,
+    "mixed": 45,
+    "majority_opposition": 25
+  }
+}

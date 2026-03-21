@@ -1,0 +1,1289 @@
+[
+  {
+    "user_id": "user_001",
+    "username": "alex_budget",
+    "persona": {
+      "age": 24,
+      "occupation": "Student",
+      "location": "Austin, TX",
+      "interests": [
+        "gaming",
+        "open-source",
+        "tech news"
+      ],
+      "values": [
+        "affordability",
+        "transparency",
+        "community"
+      ],
+      "traits": {
+        "price_sensitivity": 0.95,
+        "tech_savviness": 0.75,
+        "brand_loyalty": 0.25,
+        "optimism": 0.5,
+        "skepticism": 0.7,
+        "community_orientation": 0.8
+      },
+      "behavior": {
+        "avg_session_minutes": 25,
+        "actions_per_session": 8,
+        "engagement_rate": 0.65,
+        "subscription_tier": "free",
+        "account_age_months": 14
+      },
+      "past_opinions": [
+        "I switched because it was free and now I use it daily",
+        "Please don't take away the free tier, students depend on it"
+      ],
+      "hourly_activity": [
+        0.02,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.02,
+        0.04,
+        0.06,
+        0.08,
+        0.1,
+        0.12,
+        0.1,
+        0.08,
+        0.06,
+        0.08,
+        0.1,
+        0.12,
+        0.14,
+        0.16,
+        0.18,
+        0.2,
+        0.18,
+        0.12,
+        0.05
+      ]
+    }
+  },
+  {
+    "user_id": "user_002",
+    "username": "maya_enterprise",
+    "persona": {
+      "age": 38,
+      "occupation": "Product Manager",
+      "location": "Seattle, WA",
+      "interests": [
+        "productivity",
+        "SaaS tools",
+        "leadership",
+        "AI"
+      ],
+      "values": [
+        "efficiency",
+        "quality",
+        "innovation"
+      ],
+      "traits": {
+        "price_sensitivity": 0.2,
+        "tech_savviness": 0.85,
+        "brand_loyalty": 0.65,
+        "optimism": 0.75,
+        "skepticism": 0.4,
+        "community_orientation": 0.55
+      },
+      "behavior": {
+        "avg_session_minutes": 45,
+        "actions_per_session": 15,
+        "engagement_rate": 0.85,
+        "subscription_tier": "premium",
+        "account_age_months": 36
+      },
+      "past_opinions": [
+        "Great product, worth every penny",
+        "I would pay more if it meant better reliability"
+      ],
+      "hourly_activity": [
+        0.02,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.03,
+        0.1,
+        0.18,
+        0.2,
+        0.18,
+        0.15,
+        0.12,
+        0.08,
+        0.1,
+        0.15,
+        0.12,
+        0.1,
+        0.08,
+        0.06,
+        0.05,
+        0.04,
+        0.03,
+        0.02,
+        0.01
+      ]
+    }
+  },
+  {
+    "user_id": "user_003",
+    "username": "raj_freelancer",
+    "persona": {
+      "age": 31,
+      "occupation": "Freelance Designer",
+      "location": "Mumbai, India",
+      "interests": [
+        "design",
+        "UI/UX",
+        "creativity",
+        "startups"
+      ],
+      "values": [
+        "flexibility",
+        "creativity",
+        "value-for-money"
+      ],
+      "traits": {
+        "price_sensitivity": 0.7,
+        "tech_savviness": 0.8,
+        "brand_loyalty": 0.45,
+        "optimism": 0.65,
+        "skepticism": 0.55,
+        "community_orientation": 0.6
+      },
+      "behavior": {
+        "avg_session_minutes": 35,
+        "actions_per_session": 12,
+        "engagement_rate": 0.7,
+        "subscription_tier": "basic",
+        "account_age_months": 22
+      },
+      "past_opinions": [
+        "Dark mode would be a game changer for late night work",
+        "The UI is good but could be more customizable"
+      ],
+      "hourly_activity": [
+        0.03,
+        0.02,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.03,
+        0.05,
+        0.07,
+        0.1,
+        0.12,
+        0.1,
+        0.08,
+        0.08,
+        0.1,
+        0.08,
+        0.07,
+        0.08,
+        0.1,
+        0.12,
+        0.15,
+        0.14,
+        0.1,
+        0.06
+      ]
+    }
+  },
+  {
+    "user_id": "user_004",
+    "username": "sarah_privacy",
+    "persona": {
+      "age": 29,
+      "occupation": "Security Researcher",
+      "location": "Berlin, Germany",
+      "interests": [
+        "privacy",
+        "open-source",
+        "cybersecurity",
+        "linux"
+      ],
+      "values": [
+        "privacy",
+        "data ownership",
+        "transparency"
+      ],
+      "traits": {
+        "price_sensitivity": 0.5,
+        "tech_savviness": 0.95,
+        "brand_loyalty": 0.3,
+        "optimism": 0.4,
+        "skepticism": 0.9,
+        "community_orientation": 0.7
+      },
+      "behavior": {
+        "avg_session_minutes": 20,
+        "actions_per_session": 6,
+        "engagement_rate": 0.5,
+        "subscription_tier": "basic",
+        "account_age_months": 18
+      },
+      "past_opinions": [
+        "Any AI feature that collects data is a deal-breaker for me",
+        "I trust this platform because they have been transparent so far"
+      ],
+      "hourly_activity": [
+        0.05,
+        0.04,
+        0.03,
+        0.02,
+        0.02,
+        0.02,
+        0.05,
+        0.08,
+        0.12,
+        0.14,
+        0.12,
+        0.1,
+        0.08,
+        0.1,
+        0.12,
+        0.1,
+        0.08,
+        0.06,
+        0.05,
+        0.04,
+        0.03,
+        0.03,
+        0.04,
+        0.05
+      ]
+    }
+  },
+  {
+    "user_id": "user_005",
+    "username": "james_casual",
+    "persona": {
+      "age": 45,
+      "occupation": "Teacher",
+      "location": "Chicago, IL",
+      "interests": [
+        "education",
+        "reading",
+        "community"
+      ],
+      "values": [
+        "simplicity",
+        "reliability",
+        "community"
+      ],
+      "traits": {
+        "price_sensitivity": 0.6,
+        "tech_savviness": 0.4,
+        "brand_loyalty": 0.7,
+        "optimism": 0.8,
+        "skepticism": 0.3,
+        "community_orientation": 0.85
+      },
+      "behavior": {
+        "avg_session_minutes": 15,
+        "actions_per_session": 5,
+        "engagement_rate": 0.45,
+        "subscription_tier": "free",
+        "account_age_months": 30
+      },
+      "past_opinions": [
+        "I mostly just use the basic features, it does what I need",
+        "A community forum would be really helpful for people like me"
+      ],
+      "hourly_activity": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.02,
+        0.08,
+        0.12,
+        0.1,
+        0.08,
+        0.06,
+        0.05,
+        0.06,
+        0.05,
+        0.04,
+        0.05,
+        0.08,
+        0.1,
+        0.08,
+        0.06,
+        0.05,
+        0.04,
+        0.02,
+        0.01
+      ]
+    }
+  },
+  {
+    "user_id": "user_006",
+    "username": "priya_startup",
+    "persona": {
+      "age": 26,
+      "occupation": "Startup Founder",
+      "location": "Bangalore, India",
+      "interests": [
+        "entrepreneurship",
+        "AI",
+        "growth hacking",
+        "SaaS"
+      ],
+      "values": [
+        "growth",
+        "speed",
+        "innovation"
+      ],
+      "traits": {
+        "price_sensitivity": 0.45,
+        "tech_savviness": 0.9,
+        "brand_loyalty": 0.35,
+        "optimism": 0.88,
+        "skepticism": 0.5,
+        "community_orientation": 0.75
+      },
+      "behavior": {
+        "avg_session_minutes": 40,
+        "actions_per_session": 18,
+        "engagement_rate": 0.9,
+        "subscription_tier": "premium",
+        "account_age_months": 8
+      },
+      "past_opinions": [
+        "AI recommendations would help me find tools I didn't know I needed",
+        "I love when platforms experiment with new features"
+      ],
+      "hourly_activity": [
+        0.04,
+        0.03,
+        0.02,
+        0.01,
+        0.01,
+        0.03,
+        0.08,
+        0.15,
+        0.18,
+        0.16,
+        0.14,
+        0.12,
+        0.1,
+        0.12,
+        0.14,
+        0.12,
+        0.1,
+        0.08,
+        0.08,
+        0.1,
+        0.08,
+        0.06,
+        0.04,
+        0.03
+      ]
+    }
+  },
+  {
+    "user_id": "user_007",
+    "username": "tom_veteran",
+    "persona": {
+      "age": 52,
+      "occupation": "IT Director",
+      "location": "New York, NY",
+      "interests": [
+        "enterprise tech",
+        "management",
+        "golf"
+      ],
+      "values": [
+        "stability",
+        "reliability",
+        "ROI"
+      ],
+      "traits": {
+        "price_sensitivity": 0.25,
+        "tech_savviness": 0.7,
+        "brand_loyalty": 0.8,
+        "optimism": 0.6,
+        "skepticism": 0.55,
+        "community_orientation": 0.4
+      },
+      "behavior": {
+        "avg_session_minutes": 30,
+        "actions_per_session": 10,
+        "engagement_rate": 0.6,
+        "subscription_tier": "premium",
+        "account_age_months": 48
+      },
+      "past_opinions": [
+        "Been using this for 4 years, don't break what works",
+        "Happy to pay more if stability improves"
+      ],
+      "hourly_activity": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.02,
+        0.08,
+        0.15,
+        0.18,
+        0.15,
+        0.12,
+        0.1,
+        0.08,
+        0.1,
+        0.12,
+        0.12,
+        0.1,
+        0.08,
+        0.06,
+        0.04,
+        0.03,
+        0.02,
+        0.01,
+        0.01
+      ]
+    }
+  },
+  {
+    "user_id": "user_008",
+    "username": "zoe_activist",
+    "persona": {
+      "age": 22,
+      "occupation": "Barista / Content Creator",
+      "location": "Portland, OR",
+      "interests": [
+        "social justice",
+        "environment",
+        "art",
+        "community"
+      ],
+      "values": [
+        "fairness",
+        "inclusivity",
+        "affordability"
+      ],
+      "traits": {
+        "price_sensitivity": 0.88,
+        "tech_savviness": 0.55,
+        "brand_loyalty": 0.2,
+        "optimism": 0.6,
+        "skepticism": 0.65,
+        "community_orientation": 0.95
+      },
+      "behavior": {
+        "avg_session_minutes": 20,
+        "actions_per_session": 9,
+        "engagement_rate": 0.55,
+        "subscription_tier": "free",
+        "account_age_months": 6
+      },
+      "past_opinions": [
+        "Free access is important for people who can't afford subscriptions",
+        "I love the community features, keep building those"
+      ],
+      "hourly_activity": [
+        0.03,
+        0.02,
+        0.02,
+        0.01,
+        0.01,
+        0.01,
+        0.02,
+        0.04,
+        0.06,
+        0.08,
+        0.1,
+        0.1,
+        0.09,
+        0.08,
+        0.07,
+        0.08,
+        0.1,
+        0.12,
+        0.14,
+        0.16,
+        0.18,
+        0.16,
+        0.1,
+        0.06
+      ]
+    }
+  },
+  {
+    "user_id": "user_009",
+    "username": "carlos_developer",
+    "persona": {
+      "age": 33,
+      "occupation": "Backend Engineer",
+      "location": "Mexico City, Mexico",
+      "interests": [
+        "open-source",
+        "DevOps",
+        "APIs",
+        "automation"
+      ],
+      "values": [
+        "transparency",
+        "performance",
+        "community"
+      ],
+      "traits": {
+        "price_sensitivity": 0.55,
+        "tech_savviness": 0.92,
+        "brand_loyalty": 0.4,
+        "optimism": 0.58,
+        "skepticism": 0.72,
+        "community_orientation": 0.68
+      },
+      "behavior": {
+        "avg_session_minutes": 30,
+        "actions_per_session": 14,
+        "engagement_rate": 0.75,
+        "subscription_tier": "basic",
+        "account_age_months": 19
+      },
+      "past_opinions": [
+        "Good product but I won't pay for something I can get free elsewhere",
+        "Community forums are nice but only if well-moderated"
+      ],
+      "hourly_activity": [
+        0.04,
+        0.03,
+        0.02,
+        0.01,
+        0.01,
+        0.02,
+        0.06,
+        0.1,
+        0.14,
+        0.16,
+        0.14,
+        0.12,
+        0.1,
+        0.1,
+        0.12,
+        0.1,
+        0.08,
+        0.08,
+        0.06,
+        0.06,
+        0.05,
+        0.04,
+        0.03,
+        0.03
+      ]
+    }
+  },
+  {
+    "user_id": "user_010",
+    "username": "nina_loyalist",
+    "persona": {
+      "age": 40,
+      "occupation": "Marketing Manager",
+      "location": "London, UK",
+      "interests": [
+        "marketing",
+        "analytics",
+        "travel",
+        "UX"
+      ],
+      "values": [
+        "reliability",
+        "quality",
+        "brand trust"
+      ],
+      "traits": {
+        "price_sensitivity": 0.3,
+        "tech_savviness": 0.72,
+        "brand_loyalty": 0.88,
+        "optimism": 0.82,
+        "skepticism": 0.35,
+        "community_orientation": 0.65
+      },
+      "behavior": {
+        "avg_session_minutes": 40,
+        "actions_per_session": 13,
+        "engagement_rate": 0.8,
+        "subscription_tier": "premium",
+        "account_age_months": 55
+      },
+      "past_opinions": [
+        "I've recommended this to my whole team",
+        "Minor price increases are fine if value improves"
+      ],
+      "hourly_activity": [
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.01,
+        0.03,
+        0.08,
+        0.14,
+        0.16,
+        0.14,
+        0.12,
+        0.1,
+        0.08,
+        0.1,
+        0.12,
+        0.1,
+        0.08,
+        0.06,
+        0.04,
+        0.04,
+        0.03,
+        0.02,
+        0.02,
+        0.01
+      ]
+    }
+  },
+  {
+    "user_id": "user_011",
+    "username": "yuki_gardener",
+    "persona": {
+      "age": 34,
+      "occupation": "Urban Permaculture Consultant",
+      "location": "Kyoto, Japan",
+      "interests": [
+        "sustainable living",
+        "botany",
+        "minimalist design"
+      ],
+      "values": [
+        "environmentalism",
+        "community sharing",
+        "local sourcing"
+      ],
+      "traits": {
+        "price_sensitivity": 0.45,
+        "tech_savviness": 0.65,
+        "brand_loyalty": 0.3,
+        "optimism": 0.7,
+        "skepticism": 0.2,
+        "community_orientation": 0.85
+      },
+      "behavior": {
+        "avg_session_minutes": 25,
+        "actions_per_session": 8,
+        "engagement_rate": 0.62,
+        "subscription_tier": "basic",
+        "account_age_months": 18
+      },
+      "past_opinions": [
+        "I love finding local seeds and talking to other plant enthusiasts in my city, though I wish the search filters were more detailed for soil types.",
+        "Unlike big corporations, this platform feels like a small village where everyone helps each other grow."
+      ],
+      "hourly_activity": [
+        0.11,
+        0.027,
+        0.034,
+        0.017,
+        0.032,
+        0.014,
+        0.017,
+        0.032,
+        0.03,
+        0.01,
+        0.014,
+        0.029,
+        0.017,
+        0.028,
+        0.034,
+        0.015,
+        0.072,
+        0.068,
+        0.174,
+        0.147,
+        0.197,
+        0.177,
+        0.214,
+        0.121
+      ]
+    }
+  },
+  {
+    "user_id": "user_012",
+    "username": "elena_archivist",
+    "persona": {
+      "age": 42,
+      "occupation": "Museum Curator",
+      "location": "Lisbon, Portugal",
+      "interests": [
+        "History",
+        "Photography",
+        "Local Gastronomy"
+      ],
+      "values": [
+        "Preservation",
+        "Authenticity",
+        "Accessibility"
+      ],
+      "traits": {
+        "price_sensitivity": 0.4,
+        "tech_savviness": 0.7,
+        "brand_loyalty": 0.6,
+        "optimism": 0.5,
+        "skepticism": 0.3,
+        "community_orientation": 0.8
+      },
+      "behavior": {
+        "avg_session_minutes": 45,
+        "actions_per_session": 12,
+        "engagement_rate": 0.72,
+        "subscription_tier": "basic",
+        "account_age_months": 18
+      },
+      "past_opinions": [
+        "I love how this tool helps me digitize our regional folklore collection without cluttering my workflow.",
+        "Sometimes I wish the premium filters existed, but the basic tier is perfect for my occasional research needs."
+      ],
+      "hourly_activity": [
+        0.11,
+        0.022,
+        0.022,
+        0.017,
+        0.028,
+        0.03,
+        0.028,
+        0.024,
+        0.012,
+        0.016,
+        0.016,
+        0.029,
+        0.034,
+        0.018,
+        0.012,
+        0.036,
+        0.125,
+        0.069,
+        0.168,
+        0.141,
+        0.204,
+        0.156,
+        0.209,
+        0.119
+      ]
+    }
+  },
+  {
+    "user_id": "user_013",
+    "username": "kofi_fisherman",
+    "persona": {
+      "age": 42,
+      "occupation": "Coastal Fisherman",
+      "location": "Accra, Ghana",
+      "interests": [
+        "Marine Conservation",
+        "West African Folklore",
+        "Sustainable Livelihood"
+      ],
+      "values": [
+        "Community",
+        "Tradition",
+        "Sustainability"
+      ],
+      "traits": {
+        "price_sensitivity": 0.9,
+        "tech_savviness": 0.3,
+        "brand_loyalty": 0.4,
+        "optimism": 0.6,
+        "skepticism": 0.7,
+        "community_orientation": 0.9
+      },
+      "behavior": {
+        "avg_session_minutes": 15,
+        "actions_per_session": 8,
+        "engagement_rate": 0.45,
+        "subscription_tier": "free",
+        "account_age_months": 4
+      },
+      "past_opinions": [
+        "I only use this when I can get a data signal in the harbor, mostly to check weather routes.",
+        "The app is okay, but I worry about the costs if they keep adding premium features for things like tide charts."
+      ],
+      "hourly_activity": [
+        0.114,
+        0.033,
+        0.033,
+        0.012,
+        0.032,
+        0.036,
+        0.02,
+        0.015,
+        0.035,
+        0.025,
+        0.029,
+        0.039,
+        0.02,
+        0.013,
+        0.032,
+        0.016,
+        0.124,
+        0.124,
+        0.214,
+        0.151,
+        0.169,
+        0.172,
+        0.163,
+        0.082
+      ]
+    }
+  },
+  {
+    "user_id": "user_014",
+    "username": "ahmed_chef",
+    "persona": {
+      "age": 42,
+      "occupation": "Executive Chef",
+      "location": "Lagos, Nigeria",
+      "interests": [
+        "Molecular Gastronomy",
+        "Sustainable Sourcing",
+        "Food History"
+      ],
+      "values": [
+        "Excellence",
+        "Community Support",
+        "Cultural Preservation"
+      ],
+      "traits": {
+        "price_sensitivity": 0.3,
+        "tech_savviness": 0.8,
+        "brand_loyalty": 0.6,
+        "optimism": 0.7,
+        "skepticism": 0.3,
+        "community_orientation": 0.9
+      },
+      "behavior": {
+        "avg_session_minutes": 25,
+        "actions_per_session": 15,
+        "engagement_rate": 0.85,
+        "subscription_tier": "basic",
+        "account_age_months": 18
+      },
+      "past_opinions": [
+        "I love how the premium tier lets me track ingredient provenance for my menu planning, but I keep bouncing between basic and premium depending on my cash flow.",
+        "Finally, a platform that understands the rhythm of a commercial kitchen without trying to sell me a gym membership."
+      ],
+      "hourly_activity": [
+        0.033,
+        0.031,
+        0.034,
+        0.016,
+        0.037,
+        0.077,
+        0.069,
+        0.187,
+        0.211,
+        0.163,
+        0.19,
+        0.165,
+        0.103,
+        0.2,
+        0.173,
+        0.211,
+        0.176,
+        0.126,
+        0.076,
+        0.033,
+        0.035,
+        0.02,
+        0.026,
+        0.022
+      ]
+    }
+  },
+  {
+    "user_id": "user_015",
+    "username": "marcus_railconductor",
+    "persona": {
+      "age": 42,
+      "occupation": "Railway Conductor",
+      "location": "Glasgow, Scotland",
+      "interests": [
+        "Scottish History",
+        "Trains",
+        "Whisky Tasting"
+      ],
+      "values": [
+        "Reliability",
+        "Community Service",
+        "Traditional Craftsmanship"
+      ],
+      "traits": {
+        "price_sensitivity": 0.4,
+        "tech_savviness": 0.3,
+        "brand_loyalty": 0.6,
+        "optimism": 0.5,
+        "skepticism": 0.2,
+        "community_orientation": 0.85
+      },
+      "behavior": {
+        "avg_session_minutes": 15,
+        "actions_per_session": 8,
+        "engagement_rate": 0.6,
+        "subscription_tier": "basic",
+        "account_age_months": 24
+      },
+      "past_opinions": [
+        "I love how this app keeps track of my shift patterns, unlike the old paper books that always got lost.",
+        "Sometimes I wish the notifications were a bit louder so I don't miss the train schedule updates while the whistle blows."
+      ],
+      "hourly_activity": [
+        0.116,
+        0.03,
+        0.029,
+        0.037,
+        0.023,
+        0.032,
+        0.038,
+        0.026,
+        0.021,
+        0.02,
+        0.018,
+        0.019,
+        0.025,
+        0.015,
+        0.017,
+        0.027,
+        0.127,
+        0.071,
+        0.165,
+        0.162,
+        0.191,
+        0.16,
+        0.182,
+        0.111
+      ]
+    }
+  },
+  {
+    "user_id": "user_016",
+    "username": "elena_restorer",
+    "persona": {
+      "age": 72,
+      "occupation": "Architectural Restoration Specialist",
+      "location": "Rome, Italy",
+      "interests": [
+        "Historic Architecture",
+        "Restoring Antique Books",
+        "Botanical Gardens"
+      ],
+      "values": [
+        "Preservation",
+        "Patience",
+        "Local Heritage"
+      ],
+      "traits": {
+        "price_sensitivity": 0.85,
+        "tech_savviness": 0.35,
+        "brand_loyalty": 0.6,
+        "optimism": 0.5,
+        "skepticism": 0.7,
+        "community_orientation": 0.8
+      },
+      "behavior": {
+        "avg_session_minutes": 25,
+        "actions_per_session": 4,
+        "engagement_rate": 0.45,
+        "subscription_tier": "basic",
+        "account_age_months": 48
+      },
+      "past_opinions": [
+        "The platform is nice for finding old blueprints, but the new interface moves too fast for my eyes.",
+        "I appreciate when the community shares stories about local history rather than just posting photos."
+      ],
+      "hourly_activity": [
+        0.082,
+        0.04,
+        0.036,
+        0.028,
+        0.012,
+        0.037,
+        0.039,
+        0.038,
+        0.023,
+        0.018,
+        0.03,
+        0.028,
+        0.024,
+        0.023,
+        0.025,
+        0.014,
+        0.124,
+        0.064,
+        0.153,
+        0.219,
+        0.149,
+        0.19,
+        0.185,
+        0.123
+      ]
+    }
+  },
+  {
+    "user_id": "user_017",
+    "username": "milo_climber",
+    "persona": {
+      "age": 42,
+      "occupation": "Wilderness Guide",
+      "location": "Queenstown, New Zealand",
+      "interests": [
+        "mountaineering",
+        "sustainable gear",
+        "outdoor photography"
+      ],
+      "values": [
+        "environmental conservation",
+        "authenticity",
+        "safety"
+      ],
+      "traits": {
+        "price_sensitivity": 0.7,
+        "tech_savviness": 0.6,
+        "brand_loyalty": 0.4,
+        "optimism": 0.8,
+        "skepticism": 0.3,
+        "community_orientation": 0.9
+      },
+      "behavior": {
+        "avg_session_minutes": 24,
+        "actions_per_session": 12,
+        "engagement_rate": 0.75,
+        "subscription_tier": "basic",
+        "account_age_months": 45
+      },
+      "past_opinions": [
+        "I appreciate the clear specs on gear durability since I take my kit into the backcountry.",
+        "Honestly, I prefer gear that survives the elements over flashy marketing fluff."
+      ],
+      "hourly_activity": [
+        0.12,
+        0.036,
+        0.028,
+        0.018,
+        0.017,
+        0.033,
+        0.037,
+        0.013,
+        0.013,
+        0.031,
+        0.014,
+        0.025,
+        0.027,
+        0.024,
+        0.038,
+        0.022,
+        0.112,
+        0.115,
+        0.204,
+        0.189,
+        0.188,
+        0.199,
+        0.189,
+        0.109
+      ]
+    }
+  },
+  {
+    "user_id": "user_018",
+    "username": "hiroshi_ceramicist",
+    "persona": {
+      "age": 42,
+      "occupation": "Traditional Pottery Artisan",
+      "location": "Kyoto, Japan",
+      "interests": [
+        "Ceramics",
+        "Zen Gardens",
+        "Handwriting"
+      ],
+      "values": [
+        "Craftsmanship",
+        "Patience",
+        "Sustainability"
+      ],
+      "traits": {
+        "price_sensitivity": 0.9,
+        "tech_savviness": 0.4,
+        "brand_loyalty": 0.6,
+        "optimism": 0.5,
+        "skepticism": 0.7,
+        "community_orientation": 0.8
+      },
+      "behavior": {
+        "avg_session_minutes": 15,
+        "actions_per_session": 4,
+        "engagement_rate": 0.2,
+        "subscription_tier": "free",
+        "account_age_months": 6
+      },
+      "past_opinions": [
+        "The app works fine on my old tablet for checking prices, but the animations are too flashy for my eyes.",
+        "I prefer paying a bit more for local artisans rather than using expensive filters to edit my photos."
+      ],
+      "hourly_activity": [
+        0.086,
+        0.014,
+        0.019,
+        0.021,
+        0.012,
+        0.031,
+        0.03,
+        0.027,
+        0.026,
+        0.025,
+        0.017,
+        0.018,
+        0.033,
+        0.015,
+        0.03,
+        0.014,
+        0.078,
+        0.094,
+        0.169,
+        0.217,
+        0.213,
+        0.215,
+        0.166,
+        0.121
+      ]
+    }
+  },
+  {
+    "user_id": "user_019",
+    "username": "fatima_archivist",
+    "persona": {
+      "age": 34,
+      "occupation": "Librarian",
+      "location": "Lisbon, Portugal",
+      "interests": [
+        "history",
+        "local folklore",
+        "analog photography"
+      ],
+      "values": [
+        "community",
+        "transparency",
+        "education"
+      ],
+      "traits": {
+        "price_sensitivity": 0.6,
+        "tech_savviness": 0.4,
+        "brand_loyalty": 0.3,
+        "optimism": 0.5,
+        "skepticism": 0.7,
+        "community_orientation": 0.9
+      },
+      "behavior": {
+        "avg_session_minutes": 25,
+        "actions_per_session": 8,
+        "engagement_rate": 0.45,
+        "subscription_tier": "basic",
+        "account_age_months": 14
+      },
+      "past_opinions": [
+        "I love that you've digitized the old municipal records, but please don't charge for basic access to historical data.",
+        "It's rare to find a tool that respects the privacy of our small town's neighbors while keeping things open."
+      ],
+      "hourly_activity": [
+        0.102,
+        0.025,
+        0.028,
+        0.035,
+        0.019,
+        0.034,
+        0.013,
+        0.04,
+        0.021,
+        0.028,
+        0.034,
+        0.019,
+        0.01,
+        0.025,
+        0.026,
+        0.028,
+        0.078,
+        0.11,
+        0.209,
+        0.175,
+        0.218,
+        0.173,
+        0.167,
+        0.085
+      ]
+    }
+  },
+  {
+    "user_id": "user_020",
+    "username": "lars_forager",
+    "persona": {
+      "age": 54,
+      "occupation": "Senior Forager & Mushroom Identifier",
+      "location": "Portland, Oregon",
+      "interests": [
+        "Mycology",
+        "Forest Ecology",
+        "Mushroom Drying"
+      ],
+      "values": [
+        "Sustainability",
+        "Patience",
+        "Knowledge Sharing"
+      ],
+      "traits": {
+        "price_sensitivity": 0.8,
+        "tech_savviness": 0.3,
+        "brand_loyalty": 0.2,
+        "optimism": 0.6,
+        "skepticism": 0.4,
+        "community_orientation": 0.9
+      },
+      "behavior": {
+        "avg_session_minutes": 45,
+        "actions_per_session": 8,
+        "engagement_rate": 0.75,
+        "subscription_tier": "basic",
+        "account_age_months": 36
+      },
+      "past_opinions": [
+        "The free tier works fine for looking at photos, but I need the basic features to share my foraging logs with my group.",
+        "I prefer to learn how things work rather than just accepting whatever the app decides is best."
+      ],
+      "hourly_activity": [
+        0.128,
+        0.014,
+        0.036,
+        0.012,
+        0.015,
+        0.017,
+        0.032,
+        0.02,
+        0.032,
+        0.039,
+        0.025,
+        0.027,
+        0.026,
+        0.029,
+        0.013,
+        0.014,
+        0.087,
+        0.07,
+        0.176,
+        0.201,
+        0.185,
+        0.211,
+        0.208,
+        0.08
+      ]
+    }
+  }
+]
