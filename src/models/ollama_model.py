@@ -6,10 +6,11 @@ Uses httpx for non-blocking calls — no SDK dependency needed.
 import asyncio
 import json
 import httpx
+import os
 
 
 class OllamaModel:
-    """Thin async wrapper around Ollama's local HTTP API."""
+    """Thin async wrapper around Ollama's local or cloud HTTP API."""
 
     def __init__(
         self,
@@ -24,10 +25,16 @@ class OllamaModel:
             "temperature": 0.7,
             "num_predict": 2048,
         }
+        
+        # Support cloud version / authenticated endpoints
+        self.headers = {}
+        api_key = os.environ.get("OLLAMA_API_KEY")
+        if api_key:
+            self.headers["Authorization"] = f"Bearer {api_key}"
 
     async def generate(self, prompt: str) -> str:
         """Send a single prompt and return the response text."""
-        async with httpx.AsyncClient(timeout=self.timeout) as client:
+        async with httpx.AsyncClient(timeout=self.timeout, headers=self.headers) as client:
             payload = {
                 "model": self.model,
                 "prompt": prompt,
@@ -64,7 +71,7 @@ class OllamaModel:
     async def health_check(self) -> bool:
         """Return True if Ollama is reachable and the model is available."""
         try:
-            async with httpx.AsyncClient(timeout=5.0) as client:
+            async with httpx.AsyncClient(timeout=5.0, headers=self.headers) as client:
                 resp = await client.get(f"{self.base_url}/api/tags")
                 resp.raise_for_status()
                 tags = resp.json()

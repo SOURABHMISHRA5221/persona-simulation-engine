@@ -23,7 +23,11 @@ import argparse
 import asyncio
 import json
 import sys
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 from src.simulation import Simulation
 
@@ -156,6 +160,11 @@ def build_parser() -> argparse.ArgumentParser:
         default="http://localhost:11434",
         help="Ollama base URL (default: http://localhost:11434)",
     )
+    parser.add_argument(
+        "--ollama-cloud",
+        action="store_true",
+        help="Use Ollama cloud endpoint (https://ollama.com). Overrides --ollama-url and requires OLLAMA_API_KEY env var.",
+    )
 
     # Gemini options
     parser.add_argument(
@@ -226,6 +235,10 @@ async def main() -> None:
     if agents != args.agents:
         print(f"[INFO] Clamped agent count to {agents}")
 
+    # Resolve Ollama URL and Model for cloud
+    ollama_url = "https://ollama.com" if args.ollama_cloud else args.ollama_url
+    ollama_model = "gpt-oss:120b" if args.ollama_cloud and args.model == "qwen3:4b" else args.model
+
     # Build + run simulation
     sim = Simulation(
         campaign_title=title,
@@ -236,8 +249,8 @@ async def main() -> None:
         start_hour=args.start_hour,
         seed=args.seed,
         provider=args.provider,
-        ollama_model=args.model,
-        ollama_url=args.ollama_url,
+        ollama_model=ollama_model,
+        ollama_url=ollama_url,
         gemini_model=args.gemini_model,
         export_path=args.export,
         actions_path=args.actions,
@@ -248,7 +261,7 @@ async def main() -> None:
     provider_label = (
         f"Gemini ({args.gemini_model})"
         if args.provider == "gemini"
-        else f"Ollama ({args.ollama_url}, model: {args.model})"
+        else f"Ollama ({ollama_url}, model: {ollama_model})"
     )
     print(f"\n🔍 Checking {provider_label}...")
     ok = await sim.check_model()

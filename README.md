@@ -76,7 +76,33 @@ cd persona-simulation-engine
 pip install -r requirements.txt
 ```
 
-### Run Your First Simulation
+### Environment Setup
+
+Copy the example environment variables file:
+```bash
+cp .env.example .env
+```
+Add your API keys to `.env` if you plan to use Cloud Ollama or Gemini.
+
+### Running the Interactive Web Demo
+
+The engine ships with a premium React sandbox.
+
+1. **Start the API Backend**:
+```bash
+python3 -m uvicorn server:app --port 8000
+```
+
+2. **Start the Frontend**:
+In a new terminal window:
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Open `http://localhost:5173/#demo` in your browser.
+
+### Run via CLI
 
 ```bash
 # Interactive — prompts you for a campaign
@@ -284,6 +310,7 @@ This transforms the simulation from a *synthetic stress test* into a **digital t
 
 ```
 persona-simulation-engine/
+├── frontend/                      # React web application (Interactive Demo)
 ├── main.py                        # CLI entry point
 ├── generate_users.py              # LLM-powered persona generator
 ├── requirements.txt

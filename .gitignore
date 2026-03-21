@@ -35,6 +35,9 @@ ENV/
 
 # Simulation output
 results_*.json
-export_*.json
-
 /models/
+
+# Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
