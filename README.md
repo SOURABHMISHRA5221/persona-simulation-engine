@@ -387,6 +387,7 @@ ollama pull qwen3:4b     # faster, smaller option
 - [ ] **Web dashboard** — Real-time vote visualization during simulation
 - [ ] **A/B campaign testing** — Compare two versions of a proposal simultaneously
 - [ ] **Historical replay** — Feed past user feedback as `past_opinions` seed
+- [ ] **Global context search** — Allow agents to browse the internet to inform their decisions on current events
 
 ---
 
