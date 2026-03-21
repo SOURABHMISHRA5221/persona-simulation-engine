@@ -69,8 +69,8 @@ At the end, you get:
 - **Or** a Gemini API key (free tier works)
 
 ```bash
-git clone <repo>
-cd Simulation
+git clone https://github.com/SOURABHMISHRA5221/persona-simulation-engine.git
+cd persona-simulation-engine
 pip install -r requirements.txt
 ```
 
@@ -281,7 +281,7 @@ This transforms the simulation from a *synthetic stress test* into a **digital t
 ## Project Structure
 
 ```
-Simulation/
+persona-simulation-engine/
 ├── main.py                        # CLI entry point
 ├── generate_users.py              # LLM-powered persona generator
 ├── requirements.txt
