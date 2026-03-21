@@ -398,4 +398,12 @@ The goal is not to replace user research — it's to make the **cost of a bad de
 
 ---
 
+## Acknowledgements
+
+This project draws heavy inspiration from excellent prior work in AI simulation:
+- [camel-ai/oasis](https://github.com/camel-ai/oasis) — Pioneering work in interactive multi-agent simulation environments.
+- [mirofish-demo](https://666ghj.github.io/mirofish-demo/) — Brilliant demonstration of temporal and social knowledge graphs for digital personas.
+
+---
+
 *Built with [Ollama](https://ollama.com), [Graphiti by Zep](https://github.com/getzep/graphiti), and async Python.*
