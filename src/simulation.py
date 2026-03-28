@@ -71,6 +71,9 @@ class Simulation:
         else:
             self.model = OllamaModel(model=ollama_model, base_url=ollama_url)
 
+        self.graphiti_url: str | None = os.environ.get("GRAPHITI_URL")
+        self._used_graphiti: bool = False
+
         self.environment = Environment(action_set=self.action_set)
         self.time_engine = TimeEngine(start_hour=start_hour, seed=seed)
         self.agents: list[SimulationAgent] = []
@@ -131,9 +134,35 @@ class Simulation:
             i += 1
         return expanded[:target]
 
-    def setup(self) -> None:
+    async def _resolve_profiles(self) -> list[dict]:
+        """
+        Load personas from Graphiti KG if GRAPHITI_URL is set and healthy,
+        otherwise fall back to the local JSON profiles file.
+        """
+        if self.graphiti_url:
+            try:
+                from src.adapters.graphiti_adapter import GraphitiAdapter
+                adapter = GraphitiAdapter(self.graphiti_url)
+                print(f"\n🔗 Checking Graphiti service at {self.graphiti_url} ...")
+                if await adapter.health_check():
+                    print("   Fetching personas from knowledge graph ...")
+                    personas = await adapter.get_personas(n=self.max_agents)
+                    if personas:
+                        self._used_graphiti = True
+                        print(f"   ✅ Retrieved {len(personas)} live personas from Graphiti.")
+                        if self.max_agents > len(personas):
+                            personas = self._expand_profiles(personas, self.max_agents)
+                        return personas[: self.max_agents]
+                    print("   ⚠️  Graphiti returned 0 personas — falling back to JSON.")
+                else:
+                    print("   ⚠️  Graphiti service unhealthy — falling back to JSON.")
+            except Exception as e:
+                print(f"   ⚠️  Graphiti error: {e} — falling back to JSON.")
+        return self._load_profiles()
+
+    async def setup(self) -> None:
         self.environment.set_campaign(self.campaign_title, self.campaign_description)
-        profiles = self._load_profiles()
+        profiles = await self._resolve_profiles()
 
         for profile in profiles:
             self.environment.register_agent(profile)
@@ -145,7 +174,8 @@ class Simulation:
             )
             self.agents.append(agent)
 
-        print(f"\n✅ Loaded {len(self.agents)} agents")
+        source = "Graphiti KG" if self._used_graphiti else "local JSON"
+        print(f"\n✅ Loaded {len(self.agents)} agents (source: {source})")
         print(f"📋 Campaign : {self.campaign_title}")
         print(f"⏱  Simulating {self.num_hours} hours")
 

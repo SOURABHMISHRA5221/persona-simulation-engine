@@ -10,19 +10,31 @@ load_dotenv()
 
 app = FastAPI()
 
+ACTION_SET_MAP = {
+    "Vote (Standard approval)": "data/actions/vote.json",
+    "Sentiment Scale (1-10)":   "data/actions/vote.json",   # fallback until custom set added
+    "Feature Adoption Probability": "data/actions/vote.json",
+    "ecommerce": "data/actions/ecommerce.json",
+    "social":    "data/actions/social.json",
+    "vote":      "data/actions/vote.json",
+}
+
 @app.get("/api/simulate")
 async def simulate(
-    campaign: str = "Should we add a dark mode?", 
-    agents: int = 5, 
-    hours: int = 24, 
-    action_set: str = "Vote"
+    campaign: str = "Should we add a dark mode?",
+    agents: int = 5,
+    hours: int = 24,
+    action_set: str = "Vote (Standard approval)"
 ):
+    actions_path = ACTION_SET_MAP.get(action_set, "data/actions/vote.json")
+
     async def event_generator():
         cmd = [
             "python3", "-u", "main.py",
             "--campaign", campaign,
             "--agents", str(agents),
             "--hours", str(hours),
+            "--actions", actions_path,
             "--ollama-cloud"
         ]
         

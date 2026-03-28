@@ -41,3 +41,9 @@ results_*.json
 node_modules/
 frontend/node_modules/
 frontend/dist/
+
+# graphiti_service — Neo4j local data
+graphiti_service/data/
+graphiti_service/*.log
+nohup.out
+*.log

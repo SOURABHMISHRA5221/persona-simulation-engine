@@ -269,7 +269,7 @@ async def main() -> None:
         sys.exit(1)
     print(f"✅ {args.provider.capitalize()} is ready.")
 
-    sim.setup()
+    await sim.setup()
     await sim.run()
 
 
