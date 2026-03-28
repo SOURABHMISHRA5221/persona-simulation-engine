@@ -5,20 +5,64 @@ export default function Demo() {
   const [showResults, setShowResults] = useState(false);
   const [logs, setLogs] = useState([]);
   const [progress, setProgress] = useState(0);
-  
+
   // Form State
   const [campaign, setCampaign] = useState("Should we add a dark mode?");
   const [actionSet, setActionSet] = useState("Vote (Standard approval)");
   const [agents, setAgents] = useState(5);
   const [hours, setHours] = useState(24);
-  
+
   const [executiveSummary, setExecutiveSummary] = useState("");
-  
+
+  // Ingest panel state
+  const [isIngesting, setIsIngesting] = useState(false);
+  const [ingestLogs, setIngestLogs] = useState([]);
+  const [ingestDone, setIngestDone] = useState(false);
+  const [ingestProgress, setIngestProgress] = useState(0);
+  const ingestSourceRef = useRef(null);
+  const ingestLogsEndRef = useRef(null);
+
   const logsEndRef = useRef(null);
   const eventSourceRef = useRef(null);
-  
+
   // Track accumulated summary so we don't depend on stale closure in onmessage
   const summaryAccumulator = useRef("");
+
+  const handleIngest = () => {
+    if (ingestSourceRef.current) ingestSourceRef.current.close();
+    setIsIngesting(true);
+    setIngestDone(false);
+    setIngestLogs([]);
+    setIngestProgress(0);
+
+    const sse = new EventSource('/api/ingest-demo');
+    ingestSourceRef.current = sse;
+
+    sse.onmessage = (e) => {
+      const data = JSON.parse(e.data);
+      if (data.done) {
+        sse.close();
+        setIsIngesting(false);
+        setIngestDone(true);
+        setIngestProgress(100);
+        return;
+      }
+      if (data.ingested && data.total) {
+        setIngestProgress(Math.round((data.ingested / data.total) * 90));
+      }
+      setIngestLogs(prev => [...prev, { text: data.text, error: data.error || false }]);
+    };
+
+    sse.onerror = () => {
+      sse.close();
+      setIsIngesting(false);
+      setIngestLogs(prev => [...prev, { text: 'Connection lost — check that graphiti_service is running on :8000.', error: true }]);
+    };
+  };
+
+  useEffect(() => {
+    ingestLogsEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [ingestLogs]);
 
   const handleStart = () => {
     if (eventSourceRef.current) eventSourceRef.current.close();
@@ -138,6 +182,76 @@ export default function Demo() {
       <div style={{ marginBottom: '4rem' }}>
         <h1 style={{ fontSize: '3rem', color: 'var(--text-main)', letterSpacing: '-0.02em', marginBottom: '0.5rem', fontWeight: 700 }}>Interactive Sandbox</h1>
         <p style={{ color: 'var(--text-muted)', fontSize: '1.25rem' }}>Configure parameters and watch the engine synthesize real responses live.</p>
+      </div>
+
+      {/* ── Step 1: Ingest Demo Data ── */}
+      <div style={{ marginBottom: '3rem' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+          <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--primary)', color: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.9rem', flexShrink: 0 }}>1</div>
+          <div>
+            <h3 style={{ margin: 0, color: 'var(--text-main)', fontWeight: 600 }}>Seed the Knowledge Graph</h3>
+            <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)', fontSize: '0.95rem' }}>Ingest 5 diverse demo users (20 events) into the graph so the simulation runs on real behavioral personas.</p>
+          </div>
+        </div>
+
+        <div className="glass-panel" style={{ padding: '2rem', background: 'var(--surface-container-high, #18181A)' }}>
+          <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start', flexWrap: 'wrap' }}>
+            {/* User cards */}
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', flex: 1 }}>
+              {[
+                { id: 'demo_alex',  role: 'Software Engineer', loc: 'San Francisco', tier: 'premium', color: '#4ade80' },
+                { id: 'demo_yuki',  role: 'Product Manager',   loc: 'Tokyo',         tier: 'premium', color: '#4ade80' },
+                { id: 'demo_marco', role: 'Small Biz Owner',   loc: 'London',        tier: 'basic',   color: '#facc15' },
+                { id: 'demo_priya', role: 'Student',           loc: 'Austin',        tier: 'free',    color: '#9ca3af' },
+                { id: 'demo_clara', role: 'Teacher',           loc: 'Chicago',       tier: 'free',    color: '#9ca3af' },
+              ].map(u => (
+                <div key={u.id} style={{ background: '#121214', border: '1px solid #333', borderRadius: '8px', padding: '0.75rem 1rem', minWidth: 130 }}>
+                  <div style={{ color: u.color, fontWeight: 700, fontSize: '0.8rem', marginBottom: '0.2rem' }}>{u.tier.toUpperCase()}</div>
+                  <div style={{ color: 'var(--text-main)', fontSize: '0.85rem', fontWeight: 600 }}>{u.role}</div>
+                  <div style={{ color: 'var(--text-muted)', fontSize: '0.78rem' }}>{u.loc}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Button */}
+            <button
+              onClick={handleIngest}
+              disabled={isIngesting}
+              style={{
+                padding: '0.9rem 2rem', fontSize: '1rem', fontWeight: 700,
+                background: ingestDone ? '#1a3a1a' : isIngesting ? 'var(--surface-highest)' : 'var(--primary)',
+                color: ingestDone ? '#4ade80' : isIngesting ? 'var(--text-muted)' : '#000',
+                border: ingestDone ? '1px solid #4ade80' : 'none',
+                borderRadius: '8px', cursor: isIngesting ? 'not-allowed' : 'pointer',
+                boxShadow: (!isIngesting && !ingestDone) ? '0 0 20px rgba(143,245,255,0.3)' : 'none',
+                transition: 'all 0.3s ease', whiteSpace: 'nowrap', alignSelf: 'center',
+              }}
+            >
+              {ingestDone ? '✓ Data Seeded' : isIngesting ? `Ingesting... ${ingestProgress}%` : 'Ingest Demo Data'}
+            </button>
+          </div>
+
+          {/* Ingest log */}
+          {ingestLogs.length > 0 && (
+            <div style={{ marginTop: '1.5rem', background: '#0d0d0f', border: '1px solid #2a2a2c', borderRadius: '8px', padding: '1rem', maxHeight: '180px', overflowY: 'auto', fontFamily: 'monospace', fontSize: '0.82rem' }}>
+              {ingestLogs.map((log, i) => (
+                <div key={i} style={{ color: log.error ? '#ff716c' : log.text.startsWith('  ✓') ? '#4ade80' : '#aaa', lineHeight: '1.7' }}>
+                  {log.text}
+                </div>
+              ))}
+              <div ref={ingestLogsEndRef} />
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* ── Step 2: Run Simulation ── */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
+        <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--primary)', color: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: '0.9rem', flexShrink: 0 }}>2</div>
+        <div>
+          <h3 style={{ margin: 0, color: 'var(--text-main)', fontWeight: 600 }}>Run the Simulation</h3>
+          <p style={{ margin: '0.25rem 0 0', color: 'var(--text-muted)', fontSize: '0.95rem' }}>Choose a campaign and watch your digital twins vote in real time.</p>
+        </div>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem' }}>
